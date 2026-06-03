@@ -1,3 +1,12 @@
 # AI Coding Workshop Knowledge Base
 
-This is the knowledge base for the AI Coding Workshop.
+Tools used:
+Replit
+Cursor
+Lovable
+Claude
+Anti-Gravity
+
+Usage of Tools:
+
+Pipeline of Tools:
