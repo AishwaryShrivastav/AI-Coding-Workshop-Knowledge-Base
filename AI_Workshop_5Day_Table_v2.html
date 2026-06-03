@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5-Day AI Workshop — Programme Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d12;
+  --amber:#e09820;--amber-l:#fdf4df;--amber-m:#f5cc6a;
+  --surface:#f8f7f3;--surface2:#f0ede3;--border:#e0dbd0;
+  --muted:#69665e;
+  --d1:#b83228;--d1l:#fbecea;
+  --d2:#1a5276;--d2l:#e6eef8;
+  --d3:#4a3ab0;--d3l:#eeecfd;
+  --d4:#0b6647;--d4l:#dbf0e8;
+  --d5:#7a3b00;--d5l:#faeada;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Syne',sans-serif;background:var(--surface);color:var(--ink);font-size:13.5px;line-height:1.6}
+
+/* PAGE */
+.page{max-width:1280px;margin:0 auto;padding:48px 56px}
+
+/* HEADER */
+.header{margin-bottom:40px}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:20px}
+.header h1{font-size:32px;font-weight:700;line-height:1.1}
+.header h1 span{color:var(--amber)}
+.header-meta{display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;flex-shrink:0}
+.hm{padding:10px 18px;border-right:1px solid var(--border);text-align:center}
+.hm:last-child{border-right:none}
+.hm-n{font-size:18px;font-weight:700;color:var(--ink)}
+.hm-l{font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:1px}
+
+/* LEGEND */
+.legend{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px;background:#fff;border:1px solid var(--border);border-radius:10px}
+.leg{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--muted)}
+.leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.leg-sep{width:1px;height:14px;background:var(--border);margin:0 4px}
+
+/* TABLE */
+.tbl-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+
+/* COL WIDTHS */
+col.c-time{width:90px}
+col.c-type{width:90px}
+col.c-d1,col.c-d2,col.c-d3,col.c-d4,col.c-d5{width:calc((100% - 180px)/5)}
+
+/* HEADER ROW */
+thead tr th{padding:0;vertical-align:bottom}
+.th-blank{background:var(--surface2);border-right:1px solid var(--border);border-bottom:2px solid var(--border)}
+.th-day{padding:16px 14px 14px;text-align:left;border-right:1px solid var(--border);border-bottom:2px solid var(--border);vertical-align:top}
+.th-day:last-child{border-right:none}
+.th-day-num{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.th-day-title{font-size:14px;font-weight:700;margin-bottom:3px}
+.th-day-sub{font-size:11px;font-weight:400;line-height:1.45}
+
+/* BODY ROWS */
+tbody tr td{vertical-align:top;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr td:last-child{border-right:none}
+
+/* TIME COL */
+.td-time{background:var(--surface2);padding:12px 10px;text-align:center;border-right:1px solid var(--border)}
+.time-val{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);display:block}
+.time-dur{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--border);display:block;margin-top:2px}
+
+/* TYPE COL */
+.td-type{background:var(--surface2);padding:10px 10px;text-align:center;border-right:2px solid var(--border)}
+.type-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:100px;width:100%}
+
+/* CONTENT CELLS */
+.td-content{padding:12px 14px}
+.cell-title{font-size:12.5px;font-weight:700;margin-bottom:5px;line-height:1.3}
+.cell-items{display:flex;flex-direction:column;gap:3px;margin-top:5px}
+.ci{font-size:11.5px;color:var(--muted);display:flex;gap:6px;align-items:flex-start;line-height:1.45}
+.ci::before{content:'·';color:var(--amber);font-weight:700;flex-shrink:0;font-size:13px;line-height:1.2}
+.ci em{color:var(--ink);font-style:normal;font-weight:600}
+
+/* ROW TYPES */
+.row-break td{background:var(--surface2)}
+.row-break .td-content{padding:8px 14px}
+.break-label{font-size:11.5px;color:var(--muted);font-weight:500;text-align:center}
+
+.row-lab .td-content{background:#fffdf5}
+.row-lab .cell-title{color:#7a4508}
+
+.row-new .cell-title::after{content:'New';font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:7px;vertical-align:middle;letter-spacing:.04em}
+
+/* SECTION LABEL ROWS */
+.row-section td{background:var(--ink);padding:8px 14px}
+.row-section .section-lbl{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.row-section .section-title{font-size:12.5px;font-weight:700;color:#fff}
+
+/* EMPTY CELL */
+.cell-empty{background:var(--surface2);opacity:.4}
+
+/* FOOTER */
+.footer-note{margin-top:20px;display:flex;gap:16px;flex-wrap:wrap}
+.fn{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 18px;flex:1;min-width:200px}
+.fn-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.fn-body{font-size:12px;color:var(--muted);line-height:1.6}
+
+@media print{
+  body{font-size:11px}
+  .page{padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:6px">5-Day Intensive Workshop</div>
+        <h1>AI-Assisted Coding for <span>Engineers</span></h1>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px">Daily schedule · 9:00 AM – 5:00 PM · Hybrid delivery</div>
+      </div>
+      <div class="header-meta">
+        <div class="hm"><div class="hm-n">5</div><div class="hm-l">Days</div></div>
+        <div class="hm"><div class="hm-n">12+</div><div class="hm-l">Tools</div></div>
+        <div class="hm"><div class="hm-n">6</div><div class="hm-l">Projects</div></div>
+        <div class="hm"><div class="hm-n">60%+</div><div class="hm-l">Hands-on</div></div>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:#7a4508"></div>Lab / Project</div>
+      <div class="leg-sep"></div>
+      <div class="leg"><div class="leg-dot" style="background:var(--d3)"></div>New session (client-requested)</div>
+      <div class="leg-sep"></div>
+      <div class="leg"><div class="leg-dot" style="background:var(--surface2);border:1px solid var(--border)"></div>Theory / Lecture</div>
+      <div class="leg-sep"></div>
+      <div class="leg"><div class="leg-dot" style="background:var(--border)"></div>Break</div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="tbl-wrap">
+  <table>
+    <colgroup>
+      <col class="c-time">
+      <col class="c-type">
+      <col class="c-d1">
+      <col class="c-d2">
+      <col class="c-d3">
+      <col class="c-d4">
+      <col class="c-d5">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="th-blank" colspan="2"></th>
+        <th class="th-day" style="background:var(--d1)">
+          <div class="th-day-num" style="color:rgba(255,255,255,.55)">Day 1 — Monday</div>
+          <div class="th-day-title" style="color:#fff">Foundations</div>
+          <div class="th-day-sub" style="color:rgba(255,255,255,.6)">LLMs · Token economics · Vibe vs. responsible · Copilot · First build</div>
+        </th>
+        <th class="th-day" style="background:var(--d2)">
+          <div class="th-day-num" style="color:rgba(255,255,255,.55)">Day 2 — Tuesday</div>
+          <div class="th-day-title" style="color:#fff">Communicate</div>
+          <div class="th-day-sub" style="color:rgba(255,255,255,.6)">Prompting · VLM · Automation · n8n</div>
+        </th>
+        <th class="th-day" style="background:var(--d3)">
+          <div class="th-day-num" style="color:rgba(255,255,255,.55)">Day 3 — Wednesday</div>
+          <div class="th-day-title" style="color:#fff">Build</div>
+          <div class="th-day-sub" style="color:rgba(255,255,255,.6)">Cursor · Claude Code · Claude Design · Lovable · DB via MCP</div>
+        </th>
+        <th class="th-day" style="background:var(--d4)">
+          <div class="th-day-num" style="color:rgba(255,255,255,.55)">Day 4 — Thursday</div>
+          <div class="th-day-title" style="color:#fff">Local AI + Data</div>
+          <div class="th-day-sub" style="color:rgba(255,255,255,.6)">Ollama · Advanced RAG · Multi-agent</div>
+        </th>
+        <th class="th-day" style="background:var(--d5)">
+          <div class="th-day-num" style="color:rgba(255,255,255,.55)">Day 5 — Friday</div>
+          <div class="th-day-title" style="color:#fff">Ship It</div>
+          <div class="th-day-sub" style="color:rgba(255,255,255,.6)">Testing · CI/CD · Deploy · Capstone</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- 9:00 SESSION 1 -->
+      <tr>
+        <td class="td-time"><span class="time-val">09:00</span><span class="time-dur">90 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--surface2);color:var(--muted)">Theory</span></td>
+
+        <td class="td-content">
+          <div class="cell-title">How LLMs & Transformers Work</div>
+          <div class="cell-items">
+            <div class="ci">Tokens, prediction engine, context windows</div>
+            <div class="ci">Transformers & attention — engineering explanation</div>
+            <div class="ci">Why AI hallucinates & when to trust it</div>
+            <div class="ci">Model landscape: how to evaluate any model</div>
+            <div class="ci" style="border-top:1px solid var(--border);padding-top:4px;margin-top:2px"><em>Vibe coding vs. responsible engineering</em>: the explicit distinction — when speed matters vs. when domain verification is non-negotiable. Engineers own the output, AI is the junior.</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Prompt Engineering Mastery</div>
+          <div class="cell-items">
+            <div class="ci">CRISPE framework for code generation</div>
+            <div class="ci">Chain-of-thought, few-shot, negative prompts</div>
+            <div class="ci">Domain context injection into prompts</div>
+            <div class="ci">Live A/B: bad prompt vs. engineered prompt</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Cursor IDE + Claude Code CLI</div>
+          <div class="cell-items">
+            <div class="ci">Agent mode — multi-file generation from a description</div>
+            <div class="ci"><em>.cursorrules</em> deep dive: coding style, domain rules, forbidden patterns, engineering units — the project briefing that makes Cursor domain-aware on every session</div>
+            <div class="ci"><em>CLAUDE.md</em> deep dive: project structure, stack, conventions, what the agent should never touch — persistent context for Claude Code CLI across all sessions</div>
+            <div class="ci">Responsible engineering vs. vibe coding: when to supervise closely, what agents should never access, the diff-review habit on every AI change</div>
+            <div class="ci">Windsurf briefly: same principle, different product</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Ollama — AI Running Offline</div>
+          <div class="cell-items">
+            <div class="ci">Why local LLMs matter for sensitive data</div>
+            <div class="ci">Model selection by hardware spec</div>
+            <div class="ci">OpenAI-compatible API: swap one URL</div>
+            <div class="ci">Continue extension: private Copilot in VS Code</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Testing AI-Generated Code</div>
+          <div class="cell-items">
+            <div class="ci">The accountability principle</div>
+            <div class="ci">pytest + AI: unit, integration, edge cases</div>
+            <div class="ci">Snyk: real-time security scanning in IDE</div>
+            <div class="ci">Bandit: Python security linter, one command</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- 10:30 NEW SESSION -->
+      <tr class="row-new">
+        <td class="td-time"><span class="time-val">10:30</span><span class="time-dur">45 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--d3l);color:var(--d3)">New</span></td>
+
+        <td class="td-content">
+          <div class="cell-title">Token Economics</div>
+          <div class="cell-items">
+            <div class="ci"><em>Prompt / output / thinking</em> tokens — what each costs</div>
+            <div class="ci">Token cost calculator — estimate production spend</div>
+            <div class="ci">Context compression & prompt caching</div>
+            <div class="ci">API usage dashboards & spend alerts</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Zero/Few-Shot in Python Code <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">New</span></div>
+          <div class="cell-items">
+            <div class="ci">Embedding prompts directly in Python apps</div>
+            <div class="ci">Zero-shot: no examples — where it works/fails</div>
+            <div class="ci">Few-shot: 2–3 examples, model generalises</div>
+            <div class="ci">Metadata + rules injection in few-shot prompts</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Claude Design + Lovable + Vibe Builder Landscape</div>
+          <div class="cell-items">
+            <div class="ci"><em>Claude Design</em>: prompt → UI prototype, wireframe, slides — powered by Opus 4.7. Included in Claude Pro/Max. Handoff to Claude Code as structured implementation bundle.</div>
+            <div class="ci">Design workflow: Claude Design → export HTML/PPTX → Claude Code turns it into working product</div>
+            <div class="ci">Lovable: React + Supabase + auth + deploy from one prompt. Full-stack where Claude Design does UI.</div>
+            <div class="ci">Export to GitHub → continue in Cursor</div>
+            <div class="ci">Bolt, v0, Replit: brief landscape overview — same principle, different tools</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Advanced RAG — Full Stack <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">Expanded</span></div>
+          <div class="cell-items">
+            <div class="ci"><em>Chunking strategy</em>: fixed vs. semantic, overlap</div>
+            <div class="ci"><em>Hybrid search</em>: dense vector + BM25 sparse</div>
+            <div class="ci"><em>Reranking</em>: second-pass model for precision</div>
+            <div class="ci"><em>Temporal filtering</em>: fetch only recent documents</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">CI/CD with AI</div>
+          <div class="cell-items">
+            <div class="ci">Docker: AI-generated Dockerfiles</div>
+            <div class="ci">GitHub Actions: lint → test → scan → deploy</div>
+            <div class="ci">Claude PR bot: automated code review on merge</div>
+            <div class="ci">Rollback strategy: blue-green, tagged releases</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- 11:15 -->
+      <tr>
+        <td class="td-time"><span class="time-val">11:15</span><span class="time-dur">45 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--surface2);color:var(--muted)">Setup</span></td>
+
+        <td class="td-content">
+          <div class="cell-title">Environment Setup</div>
+          <div class="cell-items">
+            <div class="ci">VS Code, Python, Copilot — verify pre-installs</div>
+            <div class="ci">GitHub: first repo, first commit</div>
+            <div class="ci">Cursor IDE first look, API keys</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">AI Project Management</div>
+          <div class="cell-items">
+            <div class="ci">Vague requirement → structured spec with AI</div>
+            <div class="ci">AI-generated timelines and task breakdowns</div>
+            <div class="ci">Auto-generate README, ADRs, API docs</div>
+          </div>
+        </td>
+
+        <td class="td-content" style="background:var(--surface2)" rowspan="2">
+          <div class="break-label" style="text-align:left;font-weight:400;font-size:12px;color:var(--muted)">
+            <div style="font-weight:700;color:var(--ink);margin-bottom:4px">Lunch — 60 min</div>
+            Continues at 13:00 with Database Design + MCP Wrapper session
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Graph RAG + Advanced Concepts <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">New</span></div>
+          <div class="cell-items">
+            <div class="ci"><em>Graph RAG</em>: knowledge graph vs. flat chunks</div>
+            <div class="ci"><em>Multi-hop reasoning</em>: chaining lookups</div>
+            <div class="ci"><em>LoRA / Q-LoRA</em>: when fine-tuning beats RAG</div>
+            <div class="ci">Temperature for grounding vs. reasoning</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Deployment Options Compared</div>
+          <div class="cell-items">
+            <div class="ci">Streamlit Cloud, Railway, Vercel, self-hosted Docker</div>
+            <div class="ci">4-question framework for choosing per project</div>
+            <div class="ci">Secrets management, environment variables</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- LUNCH -->
+      <tr class="row-break">
+        <td class="td-time"><span class="time-val">12:00</span><span class="time-dur">60 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--border);color:var(--muted)">Break</span></td>
+        <td class="td-content"><div class="break-label">Lunch</div></td>
+        <td class="td-content"><div class="break-label">Lunch</div></td>
+        <!-- Day 3 merged above -->
+        <td class="td-content"><div class="break-label">Lunch</div></td>
+        <td class="td-content"><div class="break-label">Lunch — Capstone briefing</div></td>
+      </tr>
+
+      <!-- 13:00 -->
+      <tr class="row-new">
+        <td class="td-time"><span class="time-val">13:00</span><span class="time-dur">90 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--surface2);color:var(--muted)">Theory</span></td>
+
+        <td class="td-content">
+          <div class="cell-title">GitHub Copilot — Full Mastery</div>
+          <div class="cell-items">
+            <div class="ci">Tab, Chat, Explain, Fix — all four modes</div>
+            <div class="ci">Generate tests, docs, boilerplate automatically</div>
+            <div class="ci">VBA → Python conversion — demonstrated live</div>
+            <div class="ci">The verification habit — always read before running</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Gemini VLM: P&ID + Handwritten Docs <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">New</span></div>
+          <div class="cell-items">
+            <div class="ci">How VLMs work: image + text → structured output</div>
+            <div class="ci">Zero-shot P&ID tag extraction — what works/fails</div>
+            <div class="ci">Few-shot with naming convention rules injected</div>
+            <div class="ci">Handwritten field report extraction with examples</div>
+            <div class="ci">Cloud (Gemini) vs. local (LLaVA/Ollama) comparison</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Database Design + MCP Wrapper Pattern <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">New</span></div>
+          <div class="cell-items">
+            <div class="ci">DB types: SQL, vector, time-series — by use case</div>
+            <div class="ci">AI schema design: English → optimised schema</div>
+            <div class="ci"><em>MCP wrapper pattern</em>: DB behind named operations</div>
+            <div class="ci">Schema hidden; agents call operations, not SQL</div>
+            <div class="ci">Live Supabase demo: agent queries without writing SQL</div>
+            <div class="ci">From Day 3 onwards: all labs use live DB via MCP</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Multi-Agent Systems + Council Model</div>
+          <div class="cell-items">
+            <div class="ci">Agent vs. chatbot — acts, doesn't just answer</div>
+            <div class="ci"><em>Council model architecture</em>: Coordinator agent receives the task → routes to specialist agents (Document Agent, Data Agent, Report Agent) → each returns result → Coordinator synthesises final output</div>
+            <div class="ci">Why council beats single agent: each specialist has focused context, smaller error surface, parallelisable</div>
+            <div class="ci">Building in Python: Claude API + tool definitions + orchestration loop — no heavy framework needed</div>
+            <div class="ci">Human-in-the-loop checkpoints: agent must pause and confirm before writing to DB or sending notifications</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">MVP vs. Production + GPU / KV Cache <span style="font-size:9px;font-weight:700;background:var(--d3l);color:var(--d3);padding:2px 6px;border-radius:100px;margin-left:4px">New</span></div>
+          <div class="cell-items">
+            <div class="ci">Decision framework: when Lovable is enough</div>
+            <div class="ci">Token cost in production — calculate before building</div>
+            <div class="ci"><em>KV cache</em>: prompt caching, 90% cost reduction</div>
+            <div class="ci"><em>GPU sizing</em>: model VRAM, concurrent sessions formula</div>
+            <div class="ci">Model heads, layers → VRAM requirement explained</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- 14:30 BREAK -->
+      <tr class="row-break">
+        <td class="td-time"><span class="time-val">14:30</span><span class="time-dur">15 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--border);color:var(--muted)">Break</span></td>
+        <td class="td-content"><div class="break-label">Break</div></td>
+        <td class="td-content"><div class="break-label">Break</div></td>
+        <td class="td-content"><div class="break-label">Break</div></td>
+        <td class="td-content"><div class="break-label">Break</div></td>
+        <td class="td-content"><div class="break-label">Break</div></td>
+      </tr>
+
+      <!-- 14:45 LAB -->
+      <tr class="row-lab">
+        <td class="td-time"><span class="time-val">14:45</span><span class="time-dur">135 min</span></td>
+        <td class="td-type"><span class="type-badge" style="background:var(--amber-l);color:#7a4508">Lab</span></td>
+
+        <td class="td-content">
+          <div class="cell-title">Lab 1 — Equipment Anomaly Detector</div>
+          <div class="cell-items">
+            <div class="ci">Read sensor CSV (temp, pressure, vibration)</div>
+            <div class="ci">Rolling mean + std threshold detection</div>
+            <div class="ci"><em>Kurtosis</em>: impulsive faults, bearing failure signatures</div>
+            <div class="ci"><em>Skewness</em>: asymmetric wear, gradual degradation</div>
+            <div class="ci">HTML alert report + matplotlib charts</div>
+            <div class="ci">Commit to GitHub — first AI-generated project</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Lab 2 — Two Tracks</div>
+          <div class="cell-items">
+            <div class="ci"><em>Track A:</em> P&ID extractor — Python + Gemini VLM → JSON of instrument tags, Streamlit UI</div>
+            <div class="ci"><em>Track B:</em> Excel migration — VBA → Python via Claude, then n8n workflow for daily auto-run</div>
+            <div class="ci">Both: Google Workspace AI demo, n8n overview</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Lab 3 — Design → Build → Deploy (Live DB)</div>
+          <div class="cell-items">
+            <div class="ci"><em>Claude Design</em>: generate dashboard UI prototype from description — wireframe + component layout</div>
+            <div class="ci">Handoff: Claude Design → Claude Code as implementation bundle</div>
+            <div class="ci">Lovable: scaffold full-stack from description, or continue from Claude Design handoff</div>
+            <div class="ci">Export → Cursor → write .cursorrules for domain context</div>
+            <div class="ci">MCP connector to Supabase — no CSV files</div>
+            <div class="ci">Claude Code: DB schema + seed data</div>
+            <div class="ci">Deploy to Railway — live URL produced</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Lab 4 — Advanced RAG over Technical Manuals</div>
+          <div class="cell-items">
+            <div class="ci">LangChain + semantic chunking + 15% overlap</div>
+            <div class="ci">Embed offline: nomic-embed-text via Ollama</div>
+            <div class="ci">Hybrid search: ChromaDB + BM25 merged</div>
+            <div class="ci">Reranking: bge-reranker top-5 to LLM</div>
+            <div class="ci">Temporal filter slider in Streamlit UI</div>
+            <div class="ci">MCP: doc answers + live DB readings combined</div>
+          </div>
+        </td>
+
+        <td class="td-content">
+          <div class="cell-title">Capstone — Build + Demo (165 min)</div>
+          <div class="cell-items">
+            <div class="ci"><em>A:</em> Equipment Health Monitor — live DB, Kurtosis scores, alerts</div>
+            <div class="ci"><em>B:</em> P&ID Intelligence — VLM extraction → live sensor lookup</div>
+            <div class="ci"><em>C:</em> Document + Data Bot — Advanced RAG + MCP live DB</div>
+            <div class="ci"><em>D:</em> Operations Automation — n8n + AI + live DB, zero manual steps</div>
+            <div class="ci"><em>E:</em> Bring your own problem — must use live data via MCP</div>
+            <div class="ci">5 min demo + 3 min Q&A per team · All deployed</div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <!-- FOOTER NOTES -->
+  <div class="footer-note">
+    <div class="fn">
+      <div class="fn-title">Data Progression</div>
+      <div class="fn-body">Days 1–2: CSV files for speed and simplicity. Day 3 onwards: all labs connect to live databases via MCP — agents fetch data in real time, no manual ingestion.</div>
+    </div>
+    <div class="fn">
+      <div class="fn-title">Tools Consolidated</div>
+      <div class="fn-body">Claude Design, Cursor, Claude Code, Lovable, Ollama, n8n, LangChain taught with full depth. Windsurf, Bolt, v0, Replit, Make, Zapier shown as landscape comparisons. 3 paid subscriptions: Claude Max · Cursor Pro · GitHub Copilot. All other tools free.</div>
+    </div>
+    <div class="fn">
+      <div class="fn-title">Certification</div>
+      <div class="fn-body">Attendance 20% · Lab outputs 30% · Capstone 40% · Post-training report 10%. Pass threshold: 60%. Report submitted within 30 days of workshop.</div>
+    </div>
+    <div class="fn">
+      <div class="fn-title">Post-Training Support</div>
+      <div class="fn-body">3-month Slack/WhatsApp Q&A channel. Bi-weekly office hours. Code reviews for tools built at work. Covers the 10% post-training application report.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
