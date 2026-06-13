@@ -2,7 +2,7 @@
 
 Plain-English revision notes for the whole workshop, topic by topic. Each topic has a handful of common questions with short, simple answers. Use it to refresh a concept fast.
 
-> Answers are kept deliberately simple. For depth, see the full [guides](.) and the [programme](../curriculum/programme.md).
+> Answers are kept deliberately simple. For depth, see the full [guides](../guides) and the [programme](../curriculum/programme.md).
 
 **Topics:** [LLMs & Transformers](#1-llms--transformers) · [Tokens & Cost](#2-tokens--token-economics) · [Prompt Engineering](#3-prompt-engineering) · [Zero/Few-Shot](#4-zero-shot--few-shot) · [Copilot & Assistants](#5-github-copilot--ai-code-assistants) · [Cursor, Claude Code & Context](#6-cursor-claude-code--project-context) · [Vibe vs Responsible](#7-vibe-coding-vs-responsible-engineering) · [AI App Builders](#8-ai-design--app-builders) · [Vision & OCR](#9-vision-models--ocr) · [Databases & MCP](#10-databases--mcp) · [Local LLMs](#11-local-llms-ollama) · [RAG](#12-rag-retrieval-augmented-generation) · [Fine-tuning & Advanced RAG](#13-fine-tuning--advanced-rag) · [Multi-Agent](#14-multi-agent-systems) · [Testing](#15-testing-ai-generated-code) · [CI/CD & Deployment](#16-cicd--deployment) · [Cost & Hardware](#17-cost--hardware) · [Automation](#18-automation-n8n)
 
@@ -168,7 +168,7 @@ Other "describe it and get an app" builders. Same principle, different products.
 Yes. Export the code to GitHub and continue in Cursor or Claude Code, adding your own rules and logic.
 
 **Are these enough for production?**
-Often for an MVP, yes. For a serious production app you usually graduate to a real editor and proper testing/deployment. (See [MVP vs production](03-deployment-strategies.md).)
+Often for an MVP, yes. For a serious production app you usually graduate to a real editor and proper testing/deployment. (See [MVP vs production](../guides/deployment-strategies.md).)
 
 ---
 
@@ -335,7 +335,7 @@ A way to package your app with everything it needs, so it runs the same on any m
 GitHub's tool for running your pipeline automatically on every push — run tests, scan, and deploy without lifting a finger.
 
 **How do I pick where to deploy?**
-Ask four questions: scale, security, cost, and who maintains it. Then match to a platform — Streamlit/Railway/Vercel for simple, self-hosted Docker for control. (See [deployment guide](03-deployment-strategies.md).)
+Ask four questions: scale, security, cost, and who maintains it. Then match to a platform — Streamlit/Railway/Vercel for simple, self-hosted Docker for control. (See [deployment guide](../guides/deployment-strategies.md).)
 
 **What is a rollback strategy?**
 A plan to undo a bad release fast — using tagged releases or blue-green deploys, so you can switch back to the working version instantly.

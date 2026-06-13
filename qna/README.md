@@ -13,16 +13,16 @@ A running list of questions from participants and topics worth revisiting. We ad
 
 | # | Question | Guide |
 |---|---|---|
-| 1 | Complete documentation on AI-assisted coding across the SDLC | [AI Across the SDLC](../guides/01-ai-across-the-sdlc.md) |
-| 2 | Best way to use an LLM for a use case (API vs. local vs. Hugging Face) | [Choosing How to Use an LLM](../guides/02-choosing-how-to-use-llms.md) |
-| 3 | AI app deployment strategies and platform selection | [Deployment Strategies](../guides/03-deployment-strategies.md) |
-| 4 | Table of all tools discussed, by category | [Tools Reference](../guides/04-tools-reference.md) |
+| 1 | Complete documentation on AI-assisted coding across the SDLC | [AI Across the SDLC](../guides/ai-across-the-sdlc.md) |
+| 2 | Best way to use an LLM for a use case (API vs. local vs. Hugging Face) | [Choosing How to Use an LLM](../guides/choosing-how-to-use-llms.md) |
+| 3 | AI app deployment strategies and platform selection | [Deployment Strategies](../guides/deployment-strategies.md) |
+| 4 | Table of all tools discussed, by category | [Tools Reference](../guides/tools-reference.md) |
 
 ---
 
 ## Revision notes
 
-Topic-by-topic quick Q&A covering the whole curriculum: **[Topic Notes — Quick Q&A](../guides/topic-notes-qa.md)**.
+Topic-by-topic quick Q&A covering the whole curriculum: **[Topic Notes — Quick Q&A](../revision/topic-notes.md)**.
 
 ---
 
@@ -43,7 +43,7 @@ Template for a quick note:
 
 *Doubts waiting for an answer. Add yours here.*
 
-- Email verification — which tool/approach do we recommend? (raised for the [tools table](../guides/04-tools-reference.md))
+- Email verification — which tool/approach do we recommend? (raised for the [tools table](../guides/tools-reference.md))
 
 ---
 

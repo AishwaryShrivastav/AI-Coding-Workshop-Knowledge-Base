@@ -30,7 +30,7 @@ Ask these about the specific project. They decide the platform.
 
 **2. Security — how sensitive is the data?**
 - Normal → managed cloud is fine.
-- Sensitive / regulated → self-hosted Docker on infrastructure you control, possibly on-prem. Pairs with a [local LLM](02-choosing-how-to-use-llms.md).
+- Sensitive / regulated → self-hosted Docker on infrastructure you control, possibly on-prem. Pairs with a [local LLM](choosing-how-to-use-llms.md).
 
 **3. Cost — what's the budget and usage pattern?**
 - Low or bursty traffic → pay-per-use / free tiers (Streamlit Cloud, Vercel hobby).

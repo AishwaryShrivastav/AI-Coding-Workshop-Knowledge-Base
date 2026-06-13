@@ -76,4 +76,4 @@ Ask these about the specific project. Your answers point to the option.
 
 These are not exclusive. A common real setup is: **provider API for hard reasoning + a local model for the private, high-volume parts.**
 
-> Related: cost at scale connects to [deployment strategies](03-deployment-strategies.md) (GPU sizing, KV cache, prompt caching).
+> Related: cost at scale connects to [deployment strategies](deployment-strategies.md) (GPU sizing, KV cache, prompt caching).

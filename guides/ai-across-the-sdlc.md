@@ -64,7 +64,7 @@ Writing the code. This is where most people already use AI (Copilot, Cursor, Cla
 - Feed the AI the spec from Analysis and the design from Design. It already has the codebase; give it the *product context* too.
 - Treat the AI like a **junior engineer**: it is fast, but **you own the output.** Read every change before you accept it.
 
-> See [vibe coding vs. responsible engineering](../qna/README.md) for when to move fast and when to slow down and verify.
+> See [vibe coding vs. responsible engineering](../revision/topic-notes.md#7-vibe-coding-vs-responsible-engineering) for when to move fast and when to slow down and verify.
 
 ---
 

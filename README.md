@@ -2,39 +2,45 @@
 
 Materials and notes from the **5-day AI-Assisted Coding workshop** delivered at **IIT Guwahati for NRL (Numaligarh Refinery Limited)**.
 
-This repo is meant to grow. It holds the workshop materials, detailed write-ups for revisiting topics, and a running Q&A that we add to over time.
+This is a living repo — it grows as participants ask more questions. Everything is written in plain, simple English.
 
 ---
 
-## What's here
+## I want to… → go here
+
+| If you want to… | Go to |
+|---|---|
+| See what was covered, day by day | [Curriculum](curriculum/programme.md) |
+| Quickly refresh a concept (30-second answers) | [Revision notes](revision/topic-notes.md) |
+| Read a full deep-dive on a big topic | [Guides](#guides) (below) |
+| Ask a question or read past answers | [Q&A](qna/README.md) |
+
+---
+
+## Folders
 
 | Folder | What's in it |
 |---|---|
 | [`curriculum/`](curriculum) | The 5-day programme — a [readable schedule](curriculum/programme.md) and the [designed HTML version](curriculum/5-day-programme.html) |
-| [`guides/`](guides) | Detailed knowledge-transfer docs — the deep write-ups to revisit after the workshop |
-| [`qna/`](qna) | A running [Q&A and revision list](qna/README.md) — questions and doubts, added one at a time |
+| [`revision/`](revision) | Quick topic-by-topic Q&A — the fastest way to refresh a concept |
+| [`guides/`](guides) | In-depth write-ups on the big topics |
+| [`qna/`](qna) | A running [Q&A list](qna/README.md) — questions and doubts, added one at a time |
 
 ---
 
-## Start here
+## Guides
 
-**New to the repo?** Read the [programme](curriculum/programme.md) to see what was covered, then dip into the guides.
+In-depth write-ups answering the main participant questions:
 
-**Detailed guides:**
-1. [AI Across the SDLC](guides/01-ai-across-the-sdlc.md) — using AI at every stage, not just writing code
-2. [Choosing How to Use an LLM](guides/02-choosing-how-to-use-llms.md) — API vs. local vs. Hugging Face
-3. [Deployment Strategies](guides/03-deployment-strategies.md) — where and how to ship
-4. [Tools Reference](guides/04-tools-reference.md) — every tool we used, by category
-
-**Revision notes:**
-- [Topic Notes — Quick Q&A](guides/topic-notes-qa.md) — every curriculum topic with short, simple Q&A to refresh fast
-
-**Have a question?** Add it to the [Q&A](qna/README.md).
+1. [AI Across the SDLC](guides/ai-across-the-sdlc.md) — using AI at every stage, not just writing code
+2. [Choosing How to Use an LLM](guides/choosing-how-to-use-llms.md) — API vs. local vs. Hugging Face
+3. [Deployment Strategies](guides/deployment-strategies.md) — where and how to ship
+4. [Tools Reference](guides/tools-reference.md) — every tool we used, by category
 
 ---
 
 ## How this grows
 
-- Every new participant question becomes either a **quick note** in the Q&A or, if it's big, a **new guide**.
+- Every new participant question becomes either a **quick note** in the [Q&A](qna/README.md) or, if it's big, a **new guide**.
 - Reference material (links, cheat-sheets, examples) gets added as we go.
 - Everything here is written in **plain, simple English** — short and easy to read, not long-winded.
